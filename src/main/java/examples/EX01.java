@@ -28,25 +28,25 @@ public class EX01 {
             int chck_qty = 1;
 
             int total = (soju * sj_qty) + (chicken * chck_qty);
-            int vat = (int)(total * 0.1);
+            double vat = total * 0.1;
 
             int money = 50000;
             int charge = money - total;
 
             System.out.println("  ");
-            System.out.println(" [ 음식나라 ] ");
-            System.out.println(" ------------------------ ");
-            System.out.println(" 소주\t\t" + sj_qty + "\t\t" + soju * sj_qty);
-            System.out.println(" 너나치킨\t " + chck_qty + "\t\t" + chicken * chck_qty);
-            System.out.println(" ------------------------ ");
-            System.out.println(" 과세합계\t\t\t" + total);
-            System.out.println(" 부가세\t\t\t\t" + vat);
-            System.out.println(" ------------------------ ");
-            System.out.println(" 총합계\t\t\t\t" + total);
-            System.out.println(" 받은금액\t\t\t" + money);
-            System.out.println(" 잔돈\t\t\t\t" + charge);
-            System.out.println(" ------------------------ ");
-            System.out.println(" 2023. 01. 20\t 13:06:24 ");
+            System.out.print(" [ 음식나라 ] ");
+            System.out.print("\n ------------------------ ");
+            System.out.printf("\n 소주\t\t%2d\t\t%5d", sj_qty, soju * sj_qty);
+            System.out.printf("\n 너나치킨\t %d\t\t%d",  chck_qty, chicken * chck_qty);
+            System.out.print("\n ------------------------ ");
+            System.out.printf("\n 과세합계\t\t\t%d", total);
+            System.out.printf("\n 부가세\t\t\t\t%5.000f", vat);
+            System.out.print("\n ------------------------ ");
+            System.out.printf("\n 총합계\t\t\t\t%d", total);
+            System.out.printf("\n 받은금액\t\t\t%d", money);
+            System.out.printf("\n 잔돈\t\t\t\t%d", charge);
+            System.out.print("\n ------------------------ ");
+            System.out.print("\n 2023. 04. 03\t 10:06:24 ");
         }
 
 }
