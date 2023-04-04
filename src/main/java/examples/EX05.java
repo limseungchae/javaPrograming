@@ -175,11 +175,27 @@ public class EX05 {
                     case "356901" : result += "신한카드"; break;
                     case "356912" : result += "KB국민카드"; break;
              }
-         } else {
+        } else {
                 result = "잘못된 카드번호 입니다.";
                 }
+                    System.out.println(result);
 
-            System.out.println(result);
+        // 34. 거리에 따라 다음 요금이 정해져 있다. 거리를 km로 입력했을 때
+        // 배송료를 계산하는 프로그램을 작성하여라. (CalcurateFee)
 
-        }
+        // 가. 50km 미만 : 10000원
+        // 나. 50 ~ 100km : 18000원
+        // 다. 100 ~ 300km : 55000원
+        // 라. 300km 이상 : 75000원
+
+        System.out.print("거리는? ");
+        int dist = sc.nextInt();
+
+        if (dist >= 300 ) result = "75000원";
+        else if (dist >= 100) result = "55000원";
+        else if (dist >= 50) result = "18000원";
+        else result = "10000원";
+
+        System.out.printf("거리 : %dkm, 금액 : %s", dist, result);
+    }
 }
