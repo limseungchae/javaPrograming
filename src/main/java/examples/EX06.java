@@ -83,6 +83,25 @@ public class EX06 {
         // 다.  num1이 num2보다 크면 “추측한 숫자가 큽니다”라고 출력하세요
         // 라.  num1이 num2보다 작으면 “추측한 숫자가 작습니다”라고 출력하세요
         // 마.  num1과 num2가 같으면 “빙고! 숫자를 맞췄습니다”라고 출력하고 종료
+        rnd = new Random();     // 난수생성을 위해 다시 초기화
+        int num2 = rnd.nextInt(100) + 1; // (0 ~ 99) + 1
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("숫자는(1~100)? ");
+            int num1 = sc.nextInt();
+
+
+            result = "";
+            if (num1 > num2) result = "추측한 숫자가 큽니다!";
+            else if (num1 < num2) result = "추측한 숫자가 작습니다!";
+            else if (num1 == num2) {
+                result = "빙고! 숫자를 맞췄습니다!";
+                System.out.println(result);
+                break;
+            }
+
+            System.out.println(result);
+        }
 
 
         // Q32
@@ -91,12 +110,32 @@ public class EX06 {
         // 나.   입력한 값이 10000 이상 20000미만 이면 “10000~20000” 이라 출력
         // 다.   입력한 값이 20000 이상 30000미만 이면 “20000~30000” 이라 출력
         // 라.   입력한 값이 그 이외 값이면 “범위 밖 값” 이라 출력
+        System.out.print("값은? ");
+        int val = sc.nextInt();
 
+        result = "";
+        if (val >= 20000 && val < 30000) result = "20000~30000사이";
+        else if (val >= 10000) result = "10000~20000사이";
+        else if (val < 10000) result = "10000미만";
+        else result = "범위밖 값";
+        System.out.println(result);
 
         // Q48
         // 48.  지금 현재 수지의 통장잔액이 25,000원이다. 은행이자가 연 6%라 가정할 때,
         // 몇 년이 지나야 통장잔액이 지금의 2배를 넘는지 알아보는 프로그램을
         // 아래 그림을 참고하여 작성하여라. (ComputeInvestment)
         // 원금 25,000원에 연 이율 6%를 적용하면 12년뒤에야 2배 수익이 납니다.
+        int account = 25000;    // 잔액
+        double interst = 0.06;  // 연 이율
+
+        String fmt = "%2d 년차 통장 잔액 : %d\n";
+        int limit = account * 2;
+
+        for (int i = 1; i <= 20; i++) {
+            account = account + (int)(account * interst);
+            System.out.printf(fmt, i, account);
+            if (account >= limit) break;
+        }
+
     }
 }
