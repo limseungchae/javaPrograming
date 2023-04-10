@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class BookMarketService {
     private Scanner sc = null;
+    private  MemberShip m = null;   // 회원 정보 가져옴
 
     public BookMarketService() {
         sc = new Scanner(System.in);
     }
 
-    public String displayMenu() {  // bookmarket 메뉴 작성
+    // bookmarket 메뉴 작성
+    public String displayMenu() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("----------------------------\n")
@@ -33,6 +35,7 @@ public class BookMarketService {
         return menu;
     }
 
+    // 메뉴 분기 처리
     public void processMenu(String menu) {
         switch (menu) {
             case "1": System.out.println("\n고객정보 확인\n");break;
@@ -48,4 +51,16 @@ public class BookMarketService {
         } // switch
     }
 
+    // 회원 등록
+    public void registerMember() {
+        System.out.print("회원이름은? ");
+        String name = sc.next();
+        System.out.print("회원 이메일은? ");
+        String email = sc.next();
+        System.out.print("회원 전화번호는? ");
+        String hp = sc.next();
+
+        m = new MemberShip(230410, name, email, hp);
+
+    }
 }
