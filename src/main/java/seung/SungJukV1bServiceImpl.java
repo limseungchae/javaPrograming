@@ -45,9 +45,6 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
         }
     }
 
-    public void removeSungJuk() {
-    }
-
     public void modifySungJuk() {
         // 이름입력 -> 대상검색 -> 대상제거
         System.out.println("삭제할 학생이름은? ");
@@ -60,6 +57,10 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
                 break;
             }
         }
+    }
+
+    public void removeSungJuk() {
+        
     }
 
     public void readOneSungJuk() {
