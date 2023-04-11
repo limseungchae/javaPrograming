@@ -37,8 +37,8 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
             case "1": newSungJuk(); break;
             case "2": readSungJuk(); break;
             case "3": readOneSungJuk(); break;
-            case "4": modifySungJuk(); break;
-            case "5": removeSungJuk(); break;
+            case "4": removeSungJuk(); break;
+            case "5": modifySungJuk(); break;
             case "0": System.exit(0); break;
             default:
                 System.out.println("\n>> 잘못 입력하셨습니다! <<\n");
@@ -49,7 +49,17 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
     }
 
     public void modifySungJuk() {
+        // 이름입력 -> 대상검색 -> 대상제거
+        System.out.println("삭제할 학생이름은? ");
+        String name = sc.next();
 
+        for (int i = 0; i < sjs.length; i++) {
+            if (sjs[i] != null && sjs[i].getName().equals(name)) {
+                sjs[i] = null; // 삭제할 배열요소에 null 대입
+                System.out.println("\n삭제되었습니다!\n");
+                break;
+            }
+        }
     }
 
     public void readOneSungJuk() {
@@ -62,7 +72,6 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
             if (sj != null && sj.getName().equals(name)) {
                 one = sj; break;
             }
-
         }
 
         if (one != null) {
@@ -70,7 +79,6 @@ public class SungJukV1bServiceImpl implements SungJukV1bService {
         } else {
             System.out.println("\n찾는 데이터가 없습니다!\n");
         }
-
     }
 
     // 성적 리스트 조회 (이름,국어,영어,수학)
