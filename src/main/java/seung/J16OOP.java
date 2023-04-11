@@ -1,7 +1,5 @@
 package seung;
 
-import java.lang.ref.SoftReference;
-
 public class J16OOP {
     // 상속 (확장 extend)
     // 부모클래스로 부터 변수, 메서드를 물려받아
@@ -29,15 +27,14 @@ public class J16OOP {
 
         System.out.println(scv1.life);
         scv1.attack();
-        scv1.collect();
 
         System.out.println(marine1.life);
         marine1.attack();
-        marine1.useStipmpack();
+        marine1.useStimpack();
 
         System.out.println(firebat1.life);
         firebat1.attack();
-        firebat1.useStipmpack();
+        firebat1.useStimpack();
 
         System.out.println(medic1.life);
         medic1.useHeal();
@@ -47,11 +44,11 @@ public class J16OOP {
 }
 
 class Unit {
-    protected int life;   // 생명력
-    protected int power;  // 공격력
-    protected double move;   // 이동속도
-    protected int sight;  // 시야
-    protected int time;   // 생산소요시간
+    protected int life;     // 생명력
+    protected int power;    // 공격력
+    protected double move;  // 이동속도
+    protected int sight;    // 시야
+    protected int time;     // 생산소요시간
 
     public Unit() {
     }
@@ -62,25 +59,21 @@ class Unit {
         this.move = move;
         this.sight = sight;
         this.time = time;
-
-
-
     }
 
     protected void attack() {}
     protected void move() {}
-
 }
 
 class SCV extends Unit {
     public SCV() {
-        // super : 부모클ㄹ스의 생성자를 호출하는 특수한 키워드
+        // super : 부모클래스의 생성자를 호출하는 특수한 키워드
         super(60, 5, 2.3444, 7, 20);
     }
 
     @Override   // annotation
     protected void attack() {
-        System.out.printf("융합 절단기(%d)로 공격중...\n",power);
+        System.out.printf("융합 절단기(%d)로 공격중...\n", power);
     }
 
     protected void collect() {
@@ -88,51 +81,54 @@ class SCV extends Unit {
     }
 }
 
-class Marine extends Unit{
+class Marine extends Unit {
     public Marine() {
         super(40, 6, 1.875, 7, 24);
     }
 
     @Override
     protected void attack() {
-        System.out.printf("가우스 소총(%d)으로 공격중...\n",power);
+        System.out.printf("가우스 소총(%d)으로 공격중...\n", power);
     }
 
-    protected void useStipmpack() {
+    protected void useStimpack() {
         System.out.printf(
-                "전투 자극제 사용 : 공격력이 %.1f로 증가, 이동속도 %.1f로 증가\n",
+                "전투 자극제 사용 : 공격력 %.1f로 증가, 이동속도 %.1f로 증가\n",
                 power * 1.72, move * 1.5);
     }
 }
 
-class Firebat extends Unit{
+class Firebat extends Unit {
     public Firebat() {
-        super(50, 8, 1.875, 7, 24);
+        super(50, 8*2, 1.875, 7, 24);
     }
 
     @Override
     protected void attack() {
-        System.out.printf("화염방사기(%d)로 공격중...\n",power);
+        System.out.printf("화염방사기(%d)로 공격중...\n", power);
     }
-    protected void useStipmpack() {
+
+    protected void useStimpack() {
         System.out.printf(
-                "전투 자극제 사용 : 공격력이 %.1f로 증가, 이동속도 %.1f로 증가\n",
+                "전투 자극제 사용 : 공격력 %.1f로 증가, 이동속도 %.1f로 증가\n",
                 power * 1.96, move * 1.5);
     }
 }
 
-class Medic extends Unit{
+class Medic extends Unit {
     public Medic() {
         super(60, 0, 1.875, 9, 30);
     }
 
-   protected void useHeal() {
-       System.out.println("대상 유닛의 유닛을 초당 5.86만큼 회복시킴...");
-   }
-   protected void useRestoration() {
-       System.out.println("대상 유닛에 적용된 행동제약을 해제시킴...");
-   }
-   protected void useOpticalFlare() {
-       System.out.println("대상 유닛의 시야를 1로 고정시킴...");
-   }
+    protected void useHeal() {
+        System.out.println("대상 유닛의 체력을 초당 5.86만큼 회복시킴...");
+    }
+
+    protected void useRestoration() {
+        System.out.println("대상 유닛에 적용된 행동제약을 해제시킴...");
+    }
+
+    protected void useOpticalFlare() {
+        System.out.println("대상 유닛의 시야를 1로 고정시킴...");
+    }
 }
