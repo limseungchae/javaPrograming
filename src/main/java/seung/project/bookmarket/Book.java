@@ -1,4 +1,4 @@
-package seung;
+package seung.project.bookmarket;
 
 public class Book {
     private String isbn;

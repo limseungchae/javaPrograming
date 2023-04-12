@@ -1,4 +1,6 @@
-package seung;
+package seung.project.sungjuk.service;
+
+import seung.project.sungjuk.model.SungJukVO;
 
 public interface SungJukV1bService {
 

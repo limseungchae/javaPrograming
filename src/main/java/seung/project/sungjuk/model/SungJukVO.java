@@ -1,4 +1,4 @@
-package seung;
+package seung.project.sungjuk.model;
 
 public class SungJukVO {
     private String name;

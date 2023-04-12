@@ -1,4 +1,7 @@
-package seung;
+package seung.project.sungjuk;
+
+import seung.project.sungjuk.service.SungJukV1bService;
+import seung.project.sungjuk.service.SungJukV1bServiceImpl;
 
 public class SungJukV1bMain {
     // 성적 처리프로그램 v1b

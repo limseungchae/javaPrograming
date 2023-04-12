@@ -1,4 +1,6 @@
-package seung;
+package seung.project.bookmarket;
+
+import seung.MemberShip;
 
 import java.util.Scanner;
 
