@@ -1,4 +1,4 @@
-package seung.project.sungjuk;
+package seung;
 
 import java.io.*;
 import java.util.Scanner;
