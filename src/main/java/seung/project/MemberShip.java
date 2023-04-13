@@ -1,4 +1,4 @@
-package seung;
+package seung.project;
 
 public class MemberShip {
     private int mno;
