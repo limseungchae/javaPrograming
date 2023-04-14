@@ -65,7 +65,7 @@ public class SungJukV3ServiceImpl implements SungJukV1cService {
             case 3: readOneSungJuk(); break;
             case 4: modifySungJuk(); break;
             case 5: removeSungJuk(); break;
-            case 0: System.out.println(0); break;
+            case 0: System.exit(0); break;
 
             default:
                 System.out.println("\n>> 잘못 입력하셨습니다! <<\n");
