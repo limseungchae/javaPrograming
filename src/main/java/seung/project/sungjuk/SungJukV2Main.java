@@ -5,7 +5,7 @@ import seung.project.sungjuk.service.SungJukV2ServiceImpl;
 
 public class SungJukV2Main {
     // 성적 처리프로그램 v2
-    // 배열과 클래스, 인터페이스, ㅖ외처리, 컬렉션을 이용해서
+    // 배열과 클래스, 인터페이스, 예외처리, 컬렉션을 이용해서
     // 성적을 입력하면 총점,평균,학점을 계산함
     // SungJukV2Main, SungJukVO, SungJukV1cService, SungJukV2ServiceImpl
     // 1. 성적데이터 입력
