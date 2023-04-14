@@ -16,6 +16,7 @@ public class SungJukV3DAOImpl implements SungJukV3DAO{
     private BufferedWriter bw = null;
     private BufferedReader br = null;
 
+    // 입력한 성적 데이터를 파일에 저장
     @Override
     public boolean saveSungJuk(SungJukVO sj) {
         // 생성된 성적 데이터를 파일에 저장
@@ -26,7 +27,7 @@ public class SungJukV3DAOImpl implements SungJukV3DAO{
 
             bw.write(sj.toString());  // 파일에 기록
         } catch (Exception ex) {
-            System.out.println("성적 데이터 저장중 오류발생!!");
+            System.out.println("성적 데이터 불러오는중 오류발생!!");
             System.out.println(ex.getMessage());
             return false;
         } finally {
