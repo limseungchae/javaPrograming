@@ -6,7 +6,7 @@ public class MariaDB {
 
     private static String DRV = "org.mariadb.jdbc.Driver";
     private static String URL = "jdbc:mariadb://fullstacks.cmsyuhhb6fnz.ap-northeast-2.rds.amazonaws.com:3306";
-    private static String USR = "admin";
+    private static String USR = "fullstacks";
     private static String PWD = "fullstacks_2023";
 
     // 데이터베이스 접속 객체 생성
